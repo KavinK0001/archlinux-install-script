@@ -92,10 +92,10 @@ export LANG=en_IN.UTF-8
         echo '::1             localhost'
         echo '127.0.1.1       $arch_hostname'
 } >> /etc/hosts
-pacman -S grub efibootmgr
-y
 mkdir /boot/efi
 mount $efi_system /boot/efi
+pacman -S grub efibootmgr
+y
 grub-install --target=x86_64-efi --bootloader-id=archbtw --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 sed -i "/%wheel ALL=(ALL:ALL) ALL/s/^#//g" /etc/sudoers
