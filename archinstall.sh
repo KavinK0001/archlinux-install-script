@@ -80,7 +80,7 @@ genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt <<EOF
 set -e
 echo "root:$root_password" | chpasswd
-useradd $username
+useradd -m $username
 echo "$username:$username_password" | chpasswd
 sed -i "/en_IN/s/^#//g" /etc/locale.gen
 locale-gen
@@ -89,10 +89,21 @@ echo $arch_hostname > /etc/hostname
 export LANG=en_IN.UTF-8
 {
         echo '127.0.0.1    localhost'
-        echo '::1        localhost'
+        echo '::1          localhost'
         echo '127.0.1.1    $arch_hostname'
 } >> /etc/hosts
-
+pacman -S grub efibootmgr
+mkdir /boot/efi
+mount $efi_system /boot/efi
+grub-install --target=x86_64-efi --bootloader-id=archbtw --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+sed -i "/%wheel ALL=(ALL:ALL) ALL/s/^#//g" /etc/sudoers
+usermod -aG wheel $username
+pacman -S networkmanager plasma-meta dolphin konsole neofetch
+systemctl enable NetworkManager
+systemctl enable sddm
 EOF
+
+echo "The installation is done! Press enter to reboot"
 
 
