@@ -88,9 +88,9 @@ echo LANG=en_IN.UTF-8 > /etc/locale.conf
 echo $arch_hostname > /etc/hostname
 export LANG=en_IN.UTF-8
 {
-        echo '127.0.0.1         localhost'
-        echo '::1		localhost'
-        echo '127.0.1.1	        $arch_hostname'
+        echo '127.0.0.1    localhost'
+        echo '::1        localhost'
+        echo '127.0.1.1    $arch_hostname'
 } >> /etc/hosts
 
 EOF
