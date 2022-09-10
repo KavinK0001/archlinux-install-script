@@ -65,8 +65,8 @@ genfstab -U /mnt > /mnt/etc/fstab
 #setting root password
 
 arch-chroot /mnt <<RANDOM
-echo "Enter your root password (Don't worry if nothing shows up, your inputs are being registered)"
 set -e
+echo "Enter your root password (Don't worry if nothing shows up, your inputs are being registered)"
 read root_password
 passwd $root_password
 RANDOM
