@@ -74,11 +74,11 @@ genfstab -U /mnt > /mnt/etc/fstab
 
 #setting root password
 
-arch-chroot /mnt <<RANDOM
+arch-chroot /mnt <<EOF
 set -e
 echo "root:$root_password" | chpasswd
 useradd $username
-echo "$username:$username_password | chpasswd
-RANDOM
+echo "$username:$username_password" | chpasswd
+EOF
 
 
