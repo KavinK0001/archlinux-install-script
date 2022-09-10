@@ -17,12 +17,11 @@ echo "Enter the root partition id: "
 read root_partition
 
 echo "This will format the entered devices... If you want to make changes, press Ctrl + C and restart the script "
-read randomvariable
-
 echo "efi  = $efi_system"
 echo "swap = $swap_partition"
 echo "root = $root_partition"
-echo ""
+read randomvariable
+
 echo "Installation starting in 5"
 sleep 1
 echo "Installation starting in 4"
