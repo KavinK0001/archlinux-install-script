@@ -5,6 +5,7 @@ clear
 echo "Press any key to enter cfdisk to create your partitions"
 read rafrgrgdfgds
 cfdisk
+clear
 
 echo "Enter efi partition id"
 read efi_system
