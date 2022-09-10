@@ -68,7 +68,7 @@ arch-chroot /mnt <<RANDOM
 set -e
 echo "Enter your root password (Don't worry if nothing shows up, your inputs are being registered)"
 read root_password
-passwd $root_password
+echo "root:$root_password" | chpasswd
 RANDOM
 
 
