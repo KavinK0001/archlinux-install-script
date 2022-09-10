@@ -16,7 +16,7 @@ read swap_partition
 echo "Enter the root partition id: "
 read root_partition
 
-echo "This will format the entered devices... If you want to make changes, press Ctrl + C and restart the script "
+echo "This will format the entered devices... Press Enter to confirm. If you want to make changes, press Ctrl + C and restart the script "
 echo "efi  = $efi_system"
 echo "swap = $swap_partition"
 echo "root = $root_partition"
