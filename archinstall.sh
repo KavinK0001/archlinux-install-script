@@ -22,6 +22,16 @@ echo "swap = $swap_partition"
 echo "root = $root_partition"
 read randomvariable
 
+#user stuff
+echo "What do you want your root password to be?"
+read root_password
+
+echo "Enter a username: "
+read username
+
+echo "Enter a password for the user: "
+read username_password
+
 echo "Installation starting in 5"
 sleep 1
 echo "Installation starting in 4"
@@ -66,9 +76,9 @@ genfstab -U /mnt > /mnt/etc/fstab
 
 arch-chroot /mnt <<RANDOM
 set -e
-echo "Enter your root password (Don't worry if nothing shows up, your inputs are being registered)"
-read root_password
 echo "root:$root_password" | chpasswd
+useradd $username
+echo "$username:$username_password | chpasswd
 RANDOM
 
 
