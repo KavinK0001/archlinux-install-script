@@ -4,7 +4,7 @@ A simple arch install script that installs arch linux on a computer with my pref
 # UEFI ONLY!
 BIOS support coming soon
 
-# Default configuration
+# Default configuration (doesn't really allow you to customize anything tbh, will be improved soon)
 1. Uses the btrfs filesystem with zstd compression
 2. Uses the stock linux kernel
 3. Uses KDE Plasma for the desktop
