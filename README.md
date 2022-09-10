@@ -13,12 +13,13 @@ BIOS support coming soon
 6. The btrfs subvolume layout is compatible with timeshift's snapshot functionality (just make sure not to enable backup @home subvolume)
 7. Supports creating only one user while running the script for now (and gives them sudo privileges by defauly)
 
+# Prerequisites
+git: `pacman -Sy git`
+And some basic partitioning knowledge
 
 # Installation
-
-Requires git to be installed
 Clone this repo with `git clone https://KavinK0001/archlinux-install-script`
 cd into the directory: `cd archlinux-install-script`
 execute the script: `bash archinstaller.sh`
 
-And follow the setup
+And follow the setup as it goes
