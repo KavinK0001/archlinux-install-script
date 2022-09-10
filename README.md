@@ -18,8 +18,6 @@ git: `pacman -Sy git`
 And some basic partitioning knowledge
 
 # Installation
-Clone this repo with `git clone https://KavinK0001/archlinux-install-script`
-cd into the directory: `cd archlinux-install-script`
-execute the script: `bash archinstaller.sh`
+`git clone https://KavinK0001/archlinux-install-script; cd archlinux-install-script; bash archinstaller.sh`
 
 And follow the setup as it goes
