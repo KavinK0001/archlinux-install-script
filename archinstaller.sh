@@ -7,14 +7,9 @@ read rafrgrgdfgds
 cfdisk
 clear
 
-echo "Enter efi partition id"
-read efi_system
-
-echo "Enter swap partition id"
-read swap_partition
-
-echo "Enter the root partition id: "
-read root_partition
+read -p "Enter efi id: " efi_system
+read -p "Enter swap id: " swap_partition
+read -p "Enter root id: " root_partition
 
 echo "This will format the entered devices... Press Enter to confirm. If you want to make changes, press Ctrl + C and restart the script "
 echo "efi  = $efi_system"
