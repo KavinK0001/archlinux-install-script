@@ -92,7 +92,6 @@ export LANG=en_IN.UTF-8
         echo '::1             localhost'
         echo '127.0.1.1       $arch_hostname'
 } >> /etc/hosts
-timedatectl set-timezone Asia/Kolkata
 mkdir /boot/efi
 mount $efi_system /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=archbtw --efi-directory=/boot/efi
