@@ -10,7 +10,7 @@ BIOS support coming soon
 3. Uses KDE Plasma for the desktop
 4. Uses PipeWire as the audio server
 5. Uses GRUB as the default bootloader
-6. The btrfs subvolume layout is compatible with timeshift's snapshot functionality (just make sure not to enable backup @home subvolume)
+6. The btrfs subvolume layout is compatible with timeshift's snapshot functionality (just make sure not to enable backup @home subvolume, it'll backup /home automatically)
 7. Supports creating only one user while running the script for now (and gives them sudo privileges by defauly)
 
 # Prerequisites
