@@ -32,6 +32,9 @@ read username
 echo "Enter a password for the user: "
 read username_password
 
+echo "Enter your preferred hostname (DOESNT ACTUALLY SET HOSTNAME FOR NOW): "
+read arch_hostname
+
 echo "Installation starting in 5"
 sleep 1
 echo "Installation starting in 4"
@@ -72,13 +75,24 @@ pacstrap /mnt base linux linux-firmware sudo nano
 
 genfstab -U /mnt > /mnt/etc/fstab
 
-#setting root password
+#going into chroot
 
 arch-chroot /mnt <<EOF
 set -e
 echo "root:$root_password" | chpasswd
 useradd $username
 echo "$username:$username_password" | chpasswd
+sed -i "/en_IN/s/^#//g" /etc/locale.gen
+locale-gen
+echo LANG=en_IN.UTF-8 > /etc/locale.conf
+echo $arch_hostname > /etc/hostname
+export LANG=en_IN.UTF-8
+{
+        echo '127.0.0.1	localhost'
+        echo '::1		localhost'
+        echo '127.0.1.1	$arch_hostname
+} >> /etc/hostname
+
 EOF
 
 
