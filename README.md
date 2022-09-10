@@ -1,5 +1,5 @@
 # Arch Linux install script (very WIP)
-A simple arch install script that installs arch linux on a computer with my preferred configuration
+A simple arch install script that installs arch linux on a computer with a configuration most people would be happy with
 
 # UEFI ONLY!
 BIOS support coming soon
