@@ -14,7 +14,7 @@ BIOS support coming soon
 7. Supports creating only one user while running the script for now (and gives them sudo privileges by defauly)
 
 # Prerequisites
-git: `pacman -Sy git`
+Git, Install with: `pacman -Sy git`
 And some basic partitioning knowledge
 
 # Installation
