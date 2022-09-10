@@ -32,7 +32,7 @@ read username
 echo "Enter a password for the user: "
 read username_password
 
-echo "Enter your preferred hostname (DOESNT ACTUALLY SET HOSTNAME FOR NOW): "
+echo "Enter your preferred hostname: "
 read arch_hostname
 
 echo "Installation starting in 5"
