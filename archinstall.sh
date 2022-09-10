@@ -69,7 +69,7 @@ mount -o compress=zstd,noatime,commit=120,space_cache=v2,subvol=@ $root_partitio
 
 #running pacstrap
 
-pacstrap /mnt base linux linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
+pacstrap /mnt base linux linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
 
 #generating the fstab
 
