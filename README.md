@@ -11,7 +11,8 @@ BIOS support coming soon
 4. Uses PipeWire as the audio server
 5. Uses GRUB as the default bootloader
 6. The btrfs subvolume layout is compatible with timeshift's snapshot functionality (just make sure not to enable backup @home subvolume, it'll backup /home automatically)
-7. Supports creating only one user while running the script for now (and gives them sudo privileges by defauly)
+7. Supports creating only one user while running the script for now (and gives them sudo privileges by default)
+8. Can only generate locales and set timezone for Indian time and formates
 
 # Prerequisites
 1. Git, Install with: `pacman -Sy git`
