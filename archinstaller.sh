@@ -103,7 +103,4 @@ systemctl enable NetworkManager
 systemctl enable sddm
 EOF
 
-clear
 echo "Finished installing! Click enter to reboot"
-read gtrtguytrbrygrtg
-reboot
