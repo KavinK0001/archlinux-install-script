@@ -69,7 +69,7 @@ mount -o compress=zstd,noatime,commit=120,space_cache=v2,subvol=@ $root_partitio
 
 #running pacstrap
 
-pacstrap /mnt base linux linux-firmware sudo nano
+pacstrap /mnt base linux linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
 
 #generating the fstab
 
@@ -94,17 +94,10 @@ export LANG=en_IN.UTF-8
 } >> /etc/hosts
 mkdir /boot/efi
 mount $efi_system /boot/efi
-pacman -S grub efibootmgr
-y
 grub-install --target=x86_64-efi --bootloader-id=archbtw --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 sed -i "/%wheel ALL=(ALL:ALL) ALL/s/^#//g" /etc/sudoers
 usermod -aG wheel $username
-pacman -S networkmanager plasma-meta dolphin konsole neofetch
-y
 systemctl enable NetworkManager
 systemctl enable sddm
 EOF
-
-
-
