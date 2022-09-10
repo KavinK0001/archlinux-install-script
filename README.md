@@ -14,8 +14,8 @@ BIOS support coming soon
 7. Supports creating only one user while running the script for now (and gives them sudo privileges by defauly)
 
 # Prerequisites
-Git, Install with: `pacman -Sy git`
-And some basic partitioning knowledge
+1. Git, Install with: `pacman -Sy git`
+2. And some basic partitioning knowledge
 
 # Installation
 `git clone https://KavinK0001/archlinux-install-script; cd archlinux-install-script; bash archinstaller.sh`
