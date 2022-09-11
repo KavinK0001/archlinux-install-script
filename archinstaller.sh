@@ -18,17 +18,11 @@ echo "root = $root_partition"
 read randomvariable
 
 #user stuff
-echo "What do you want your root password to be?"
-read root_password
+read -p "Enter preferred root password: " root_password
+read -p "Enter the user's name: " username
+read -p "Enter the user's password: " username_password
+read -p "Enter the preferred hostname: " arch
 
-echo "Enter a username: "
-read username
-
-echo "Enter a password for the user: "
-read username_password
-
-echo "Enter your preferred hostname: "
-read arch_hostname
 
 echo "Installation starting in 5"
 sleep 1
