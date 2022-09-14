@@ -7,9 +7,9 @@ read rafrgrgdfgds
 cfdisk
 clear
 
-read -p "Enter efi id: " efi_system
-read -p "Enter swap id: " swap_partition
-read -p "Enter root id: " root_partition
+read -p "Enter efi partition (Leave blank if installing on a legacy BIOS system): " efi_system
+read -p "Enter swap partition: " swap_partition
+read -p "Enter root partition: " root_partition
 
 echo "This will format the entered devices... Press Enter to confirm. If you want to make changes, press Ctrl + C and restart the script "
 echo "efi  = $efi_system"
@@ -23,6 +23,7 @@ read -p "Enter the user's name: " username
 read -p "Enter the user's password: " username_password
 read -p "Enter the preferred hostname: " arch
 
+read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, linux-lts): " kernel
 
 echo "Installation starting in 5"
 sleep 1
@@ -58,7 +59,7 @@ mount -o compress=zstd,noatime,commit=120,space_cache=v2,subvol=@ $root_partitio
 
 #running pacstrap
 
-pacstrap /mnt base linux linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
+pacstrap /mnt base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
 
 #generating the fstab
 
