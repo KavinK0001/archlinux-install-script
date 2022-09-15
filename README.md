@@ -6,7 +6,7 @@ just realised, if you just don't enter anything when it asks you to enter your e
 
 # Default configuration (doesn't really allow you to customize anything tbh, will be improved soon)
 1. Uses the btrfs filesystem with zstd compression
-2. Uses the stock linux kernel
+2. [UPDATE]: Lets you choose the kernel you want to use!
 3. Uses KDE Plasma for the desktop
 4. Uses PipeWire as the audio server
 5. Uses GRUB as the default bootloader
