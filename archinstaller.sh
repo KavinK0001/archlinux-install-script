@@ -92,4 +92,4 @@ systemctl enable NetworkManager
 systemctl enable sddm
 EOF
 
-echo "Finished installing! Click enter to reboot"
+echo "Finished installing! 
