@@ -2,7 +2,7 @@
 A simple arch install script that installs arch linux on a computer with a configuration most people would be happy with
 
 # UEFI ONLY!*
-just realised, if you just don't enter anything when it asks you to enter your efi partition, it works on bios too lol
+just realised, if you just don't enter anything when it asks you to enter your efi partition, it works on legacy bios too lol
 
 # Default configuration (doesn't really allow you to customize anything tbh, will be improved soon)
 1. Uses the btrfs filesystem with zstd compression
