@@ -68,7 +68,6 @@ genfstab -U /mnt > /mnt/etc/fstab
 #going into chroot
 
 arch-chroot /mnt <<EOF
-set -e
 echo "root:$root_password" | chpasswd
 useradd -m $username
 echo "$username:$username_password" | chpasswd
@@ -91,5 +90,3 @@ usermod -aG wheel $username
 systemctl enable NetworkManager
 systemctl enable sddm
 EOF
-
-echo "Finished installing! 
