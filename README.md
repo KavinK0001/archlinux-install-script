@@ -21,4 +21,4 @@ just realised, if you just don't enter anything when it asks you to enter your e
 # Installation
 `git clone https://KavinK0001/archlinux-install-script; cd archlinux-install-script; bash archinstaller.sh`
 
-And follow the setup as it goes
+And follow the setup as it goes lmao
