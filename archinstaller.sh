@@ -3,7 +3,7 @@
 clear
 
 echo "Press any key to enter cfdisk to create your partitions"
-read rafrgrgdfgds
+read foo
 cfdisk
 clear
 
@@ -15,7 +15,7 @@ echo "This will format the entered devices... Press Enter to confirm. If you wan
 echo "efi  = $efi_system"
 echo "swap = $swap_partition"
 echo "root = $root_partition"
-read randomvariable
+read bar
 
 #user stuff
 read -p "Enter preferred root password: " root_password
