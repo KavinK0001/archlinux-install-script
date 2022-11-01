@@ -4,7 +4,7 @@ clear
 echo "Hello!"
 sleep 2
 read -p "Enter country for reflector mirrorlist: " country
-reflector --country $country --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country $country --sort rate --save /etc/pacman.d/mirrorlist | /dev/null
 
 echo "Press ENTER to enter cfdisk"
 read foo
