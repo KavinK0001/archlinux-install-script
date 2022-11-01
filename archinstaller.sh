@@ -76,6 +76,7 @@ mount -o compress=zstd,noatime,commit=120,space_cache=v2,subvol=@ $root_partitio
 
 #running pacstrap
 
+sed -i '/ParallelDownloads = 5/s/^#//g' /etc/pacman.conf
 pacstrap /mnt $PACKAGES
 
 #generating the fstab
