@@ -25,6 +25,9 @@ read bar
 
 #profile
 
+read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, linux-lts): " kernel
+
+
 read -p "Which profile would you like to use? (desktop, minimal): " INSTALLPROFILE
 if [ "$INSTALLPROFILE" == "desktop" ]; then
                PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
@@ -38,7 +41,6 @@ read -p "Enter the user's name: " username
 read -p "Enter the user's password: " username_password
 read -p "Enter the preferred hostname: " arch
 
-read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, linux-lts): " kernel
 
 echo "Installation starting in 5"
 sleep 1
