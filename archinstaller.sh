@@ -29,6 +29,7 @@ if [ "$BOOTMODE" == "y" ]; then
   GRUBCOMMAND="grub-install --bootloader-id=GRUB --efi-directory=/boot/efi"
 elif [ "$BOOTMODE" == "n" ]; then
   GRUBCOMMAND="grub-install $root_partition"
+fi
 
 #profile
 
