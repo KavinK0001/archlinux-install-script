@@ -109,7 +109,7 @@ export LANG=en_IN.UTF-8
 } >> /etc/hosts
 mkdir /boot/efi
 mount $efi_system /boot/efi
-grub-install --target=x86_64-efi --bootloader-id=archbtw --efi-directory=/boot/efi
+$GRUBCOMMAND
 grub-mkconfig -o /boot/grub/grub.cfg
 sed -i "/%wheel ALL=(ALL:ALL) ALL/s/^#//g" /etc/sudoers
 usermod -aG wheel $username
