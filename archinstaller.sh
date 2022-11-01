@@ -13,6 +13,7 @@ read foo
 cfdisk
 clear
 
+
 read -p "Enter efi partition (Leave blank if installing on a legacy BIOS system): " efi_system
 read -p "Enter swap partition (Leave blank if not necessary): " swap_partition
 read -p "Enter root partition: " root_partition
@@ -23,6 +24,12 @@ echo "swap = $swap_partition"
 echo "root = $root_partition"
 read bar
 
+read -p "Installing on UEFI? (y,n): " BOOTMODE
+if [ "$BOOTMODE" == "y" ]; then
+  GRUBCOMMAND="grub-install --bootloader-id=GRUB --efi-directory=/boot/efi"
+elif [ "$BOOTMODE" == "n" ]; then
+  GRUBCOMMAND="grub-install $root_partition"
+
 #profile
 
 read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, linux-lts): " kernel
@@ -30,9 +37,9 @@ read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, lin
 
 read -p "Which profile would you like to use? (desktop, minimal): " INSTALLPROFILE
 if [ "$INSTALLPROFILE" == "desktop" ]; then
-               PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
-       elif [ "$INSTALLPROFILE" == "minimal" ]; then
-        PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr networkmanager"
+  PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
+elif [ "$INSTALLPROFILE" == "minimal" ]; then
+  PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr networkmanager"
 fi	
 
 #user stuff
