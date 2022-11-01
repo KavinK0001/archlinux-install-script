@@ -1,14 +1,18 @@
 #!/bin/bash
-
 clear
 
-echo "Press any key to enter cfdisk to create your partitions"
+echo "Hello!"
+sleep 2
+read -p "Enter country for reflector mirrorlist: " country
+reflector --country $country --sort rate --save /etc/pacman.d/mirrorlist
+
+echo "Press ENTER to enter cfdisk"
 read foo
 cfdisk
 clear
 
 read -p "Enter efi partition (Leave blank if installing on a legacy BIOS system): " efi_system
-read -p "Enter swap partition: " swap_partition
+read -p "Enter swap partition (Leave blank if not necessary): " swap_partition
 read -p "Enter root partition: " root_partition
 
 echo "This will format the entered devices... Press Enter to confirm. If you want to make changes, press Ctrl + C and restart the script "
@@ -16,6 +20,15 @@ echo "efi  = $efi_system"
 echo "swap = $swap_partition"
 echo "root = $root_partition"
 read bar
+
+#profile
+
+read -p "Which profile would you like to use? (desktop, minimal): " INSTALLPROFILE
+if [ "$INSTALLPROFILE" == "desktop" ]; then
+               PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
+       elif [ "$INSTALLPROFILE" == "minimal" ]; then
+        PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr networkmanager"
+fi	
 
 #user stuff
 read -p "Enter preferred root password: " root_password
@@ -59,7 +72,7 @@ mount -o compress=zstd,noatime,commit=120,space_cache=v2,subvol=@ $root_partitio
 
 #running pacstrap
 
-pacstrap /mnt base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse pipewire-jack pipewire-alsa
+pacstrap /mnt $PACKAGES
 
 #generating the fstab
 
