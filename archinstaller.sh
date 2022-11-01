@@ -6,6 +6,7 @@ sleep 2
 read -p "Enter country for reflector mirrorlist: " country
 echo "This might take a while..."
 reflector --country $country --sort rate --save /etc/pacman.d/mirrorlist >/dev/null 2>&1
+echo "Fetched the latest mirrors from $country!"
 
 echo "Press ENTER to enter cfdisk"
 read foo
