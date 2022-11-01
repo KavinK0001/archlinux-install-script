@@ -47,7 +47,7 @@ fi
 read -p "Enter preferred root password: " root_password
 read -p "Enter the user's name: " username
 read -p "Enter the user's password: " username_password
-read -p "Enter the preferred hostname: " arch
+read -p "Enter the preferred hostname: " arch_hostname
 
 
 echo "Installation starting in 5"
