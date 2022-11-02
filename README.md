@@ -18,10 +18,9 @@ yessir
 8. Can only generate locales for Indian formats
 
 # Prerequisites
-1. Git, Install with: `pacman -Sy git`
-2. And some basic partitioning knowledge
+basic partitioning knowledge
 
 # Installation
-`git clone https://KavinK0001/archlinux-install-script; cd archlinux-install-script; bash archinstaller.sh`
+curl -LJO https://raw.githubusercontent.com/KavinK0001/archlinux-install-script/main/archinstaller.sh; chmod +x archinstaller.sh
 
-And follow the setup as it goes lmao
+And follow the setup as it goes
