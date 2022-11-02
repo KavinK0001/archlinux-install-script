@@ -1,12 +1,15 @@
 # Arch Linux install script (very WIP)
 A simple arch install script that installs arch linux on a computer with a configuration most people would be happy with
 
-# UEFI ONLY! (kind of)
-just realised, if you just don't enter anything when it asks you to enter your efi partition, it works on legacy bios too lol (it still installs efibootmgr though)
+# UEFI works now!
+haha fixed it now
 
-# Default configuration (doesn't really allow you to customize anything tbh, will be improved soon)
+# You can now choose between minimal and desktop mode
+yessir
+
+# Features (ignore whatever doesn't apply to a minimal system)
 1. Uses the btrfs filesystem with zstd compression
-2. [UPDATE]: Lets you choose the kernel you want to use!
+2. Lets you choose the kernel you want to use
 3. Uses KDE Plasma for the desktop
 4. Uses PipeWire as the audio server
 5. Uses GRUB as the default bootloader
