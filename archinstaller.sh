@@ -24,11 +24,13 @@ echo "swap = $swap_partition"
 echo "root = $root_partition"
 read bar
 
+read -p "Enter grub installation disk (Legacy BIOS only): " GRUBDISK
+
 read -p "Installing on UEFI? (y,n): " BOOTMODE
 if [ "$BOOTMODE" == "y" ]; then
   GRUBCOMMAND="grub-install --bootloader-id=GRUB --efi-directory=/boot/efi"
 elif [ "$BOOTMODE" == "n" ]; then
-  GRUBCOMMAND="grub-install $root_partition"
+  GRUBCOMMAND="grub-install $GRUBDISK"
 fi
 
 #profile
