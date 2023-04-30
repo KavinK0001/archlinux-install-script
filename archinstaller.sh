@@ -40,9 +40,9 @@ read -p "Which kernel do you want to use? (linux, linux-zen, linux-hardened, lin
 
 read -p "Which profile would you like to use? (desktop, minimal): " INSTALLPROFILE
 if [ "$INSTALLPROFILE" == "desktop" ]; then
-  PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
+  PACKAGES="base $kernel linux-firmware sudo vim neofetch grub efibootmgr dolphin plasma-meta konsole btrfs-progs networkmanager neofetch pipewire-pulse jack2"
 elif [ "$INSTALLPROFILE" == "minimal" ]; then
-  PACKAGES="base $kernel linux-firmware sudo nano grub efibootmgr networkmanager"
+  PACKAGES="base $kernel linux-firmware sudo vim neofetch grub efibootmgr networkmanager"
 fi	
 
 #user stuff
